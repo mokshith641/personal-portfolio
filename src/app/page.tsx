@@ -1,69 +1,101 @@
-import Image from "next/image";
+import BackgroundGrid from "@/components/BackgroundGrid";
+import MouseGlow from "@/components/MouseGlow";
+import FloatingNav from "@/components/FloatingNav";
+import LoadingScreen from "@/components/LoadingScreen";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Skills from "@/components/Skills";
+import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
+import GithubStats from "@/components/GithubStats";
+import Achievements from "@/components/Achievements";
+import Resume from "@/components/Resume";
+import Contact from "@/components/Contact";
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <>
+      {/* Premium compiler/system loading indicator */}
+      <LoadingScreen />
+
+      {/* Dynamic particles mesh and ambient light background */}
+      <BackgroundGrid />
+
+      {/* Radial follower cursor halo with settings toggle */}
+      <MouseGlow />
+
+      {/* Sliding Vercel-like menu header bar */}
+      <FloatingNav />
+
+      {/* Scrolling Sections wrapper */}
+      <main className="relative z-20 flex flex-col w-full min-h-screen">
+        <Hero />
+        
+        {/* Decorative separator lines */}
+        <div className="w-full max-w-5xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
+        <About />
+        
+        <div className="w-full max-w-5xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
+        <Skills />
+        
+        <div className="w-full max-w-5xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
+        <Experience />
+        
+        <div className="w-full max-w-5xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
+        <Projects />
+
+        <div className="w-full max-w-5xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
+        <GithubStats />
+
+        <div className="w-full max-w-5xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
+        <Achievements />
+
+        <div className="w-full max-w-5xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
+        <Resume />
+
+        <div className="w-full max-w-5xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
+        <Contact />
       </main>
-    </div>
+
+      {/* Minimal premium Footer */}
+      <footer className="relative z-30 border-t border-card-border bg-[#030712] py-12 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-text-secondary select-none">
+          <div className="flex flex-col items-center md:items-start gap-1 font-mono">
+            <span className="text-text-primary font-bold">Mokshith H C</span>
+            <span>AI & Machine Learning Engineer Portfolio</span>
+          </div>
+
+          <div className="flex items-center gap-6 font-mono">
+            <a 
+              href="https://github.com/mokshith641" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-text-primary transition-colors flex items-center gap-1.5"
+            >
+              <FiGithub /> GitHub
+            </a>
+            <a 
+              href="https://linkedin.com/in/mokshith-h-c" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-text-primary transition-colors flex items-center gap-1.5"
+            >
+              <FiLinkedin /> LinkedIn
+            </a>
+            <a 
+              href="mailto:mokshith641@gmail.com" 
+              className="hover:text-text-primary transition-colors flex items-center gap-1.5"
+            >
+              <FiMail /> Mail
+            </a>
+          </div>
+
+          <div className="font-mono text-[10px] text-text-secondary/50">
+            &copy; {new Date().getFullYear()} Mokshith H C. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </>
   );
 }

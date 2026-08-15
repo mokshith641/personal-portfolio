@@ -28,14 +28,14 @@ export default function LoadingScreen() {
           setTimeout(() => {
             setIsDone(true);
             document.body.style.overflow = "unset";
-          }, 600);
+          }, 150);
           return 100;
         }
-        // Random incremental values to make it feel natural
-        const increment = Math.floor(Math.random() * 8) + 2;
+        // Snappy progress steps
+        const increment = Math.floor(Math.random() * 12) + 6;
         return Math.min(prev + increment, 100);
       });
-    }, 80);
+    }, 20);
 
     return () => {
       clearInterval(progressInterval);
@@ -58,7 +58,7 @@ export default function LoadingScreen() {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
           className="fixed inset-0 bg-[#030712] z-50 flex flex-col items-center justify-center p-6 text-left select-none font-mono"
         >
           {/* Subtle glow background */}

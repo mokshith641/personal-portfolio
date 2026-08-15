@@ -1,11 +1,14 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { FaChessKing } from "react-icons/fa";
 import { FiArrowLeft } from "react-icons/fi";
-import Link from "next/link";
 
 export default function NotFound() {
+  const handleNavigateHome = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.history.pushState(null, "", "/");
+    window.dispatchEvent(new Event("popstate"));
+  };
+
   return (
     <main className="min-h-screen bg-[#030712] flex flex-col items-center justify-center p-6 text-center select-none font-sans relative overflow-hidden">
       
@@ -17,7 +20,7 @@ export default function NotFound() {
         
         {/* Visual Chess Graphic (Checkmated King) */}
         <motion.div
-          animate={{ y: [0, -10, 0] }}
+          animate={{ y: [0, -5, 0] }}
           transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
           className="relative w-32 h-32 flex items-center justify-center border border-card-border rounded-full bg-black/60 backdrop-blur-md shadow-2xl p-4"
         >
@@ -49,12 +52,13 @@ export default function NotFound() {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          <Link
+          <a
             href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-xs font-semibold text-white shadow-lg shadow-primary/20 hover:shadow-primary/35 transition-all"
+            onClick={handleNavigateHome}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-primary to-secondary text-xs font-semibold text-white shadow-lg shadow-primary/20 hover:shadow-primary/35 transition-all cursor-pointer"
           >
             <FiArrowLeft /> Return to Workspace
-          </Link>
+          </a>
         </motion.div>
 
       </div>

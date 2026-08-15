@@ -1,8 +1,6 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FiArrowRight, FiDownload, FiCode } from "react-icons/fi";
+import { FiCode } from "react-icons/fi";
 
 const TYPING_PHRASES = [
   "AI & Machine Learning Undergraduate",
@@ -25,17 +23,17 @@ export default function Hero() {
       if (!isDeleting) {
         // Typing
         setCurrentPhrase(fullPhrase.substring(0, currentPhrase.length + 1));
-        setTypingSpeed(100);
+        setTypingSpeed(60);
 
         if (currentPhrase === fullPhrase) {
           // Pause at complete phrase
-          timer = setTimeout(() => setIsDeleting(true), 2000);
+          timer = setTimeout(() => setIsDeleting(true), 1200);
           return;
         }
       } else {
         // Deleting
         setCurrentPhrase(fullPhrase.substring(0, currentPhrase.length - 1));
-        setTypingSpeed(50);
+        setTypingSpeed(30);
 
         if (currentPhrase === "") {
           setIsDeleting(false);
@@ -51,37 +49,21 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, [currentPhrase, isDeleting, phraseIndex, typingSpeed]);
 
-  const handleScrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section 
       id="hero" 
-      className="min-h-screen relative flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden md:px-12 xl:px-24"
+      className="min-h-[calc(100vh-250px)] relative flex items-center justify-center py-8 px-6 overflow-hidden md:px-12 xl:px-24"
     >
       <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-20">
         
         {/* Left: Text Content */}
         <div className="lg:col-span-7 flex flex-col items-start text-left gap-6">
           
-          {/* Tagline */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-card-border bg-white/[0.02] backdrop-blur-sm text-xs text-accent font-mono"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-ping" />
-            Open for opportunities
-          </motion.div>
-
           {/* Name */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.3, delay: 0.05 }}
             className="flex flex-col gap-1"
           >
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-text-primary via-white to-text-secondary select-none leading-tight">
@@ -99,51 +81,27 @@ export default function Hero() {
 
           {/* Short Bio */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
             className="text-text-secondary text-sm md:text-base max-w-xl leading-relaxed font-sans"
           >
             AI & Machine Learning undergraduate with hands-on experience building full-stack applications. 
             Passionate about scalable backend design, API orchestration, and applying vector search and 
             language model workflows (RAG) to solve practical problems.
           </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-wrap items-center gap-4 mt-2"
-          >
-            <button
-              onClick={() => handleScrollTo("projects")}
-              className="px-6 py-3 rounded-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-sm font-semibold flex items-center gap-2 group transition-all duration-300 shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_35px_rgba(139,92,246,0.5)] cursor-pointer hover:scale-[1.02]"
-            >
-              View Projects 
-              <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </button>
-            
-            <button
-              onClick={() => handleScrollTo("resume")}
-              className="px-6 py-3 rounded-full glass hover:bg-white/[0.08] hover:border-white/20 text-sm font-semibold flex items-center gap-2 transition-all duration-300 cursor-pointer hover:scale-[1.02]"
-            >
-              Resume 
-              <FiDownload className="text-text-secondary group-hover:translate-y-0.5 transition-transform" />
-            </button>
-          </motion.div>
         </div>
 
         {/* Right: Premium Interactive Neural Network Visualizer */}
         <div className="lg:col-span-5 flex items-center justify-center relative">
           <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
+            initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             className="relative w-[280px] h-[280px] md:w-[360px] md:h-[360px] flex items-center justify-center"
           >
             {/* Pulsing glows behind */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full blur-[60px] opacity-10 animate-pulse" style={{ animationDuration: "8s" }} />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full blur-[60px] opacity-10" />
             
             {/* SVG Interactive Neural Network Nodes */}
             <svg 
@@ -220,10 +178,23 @@ export default function Hero() {
               </defs>
             </svg>
 
-            {/* Glowing Core Avatar Frame */}
+            {/* Glowing Core Avatar Frame with image support and fallback */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-[110px] h-[110px] md:w-[150px] md:h-[150px] rounded-full border border-card-border p-1.5 bg-black/80 backdrop-blur-md shadow-[0_0_50px_rgba(59,130,246,0.25)] flex items-center justify-center">
-                <div className="w-full h-full rounded-full bg-gradient-to-tr from-primary/10 via-secondary/20 to-accent/10 border border-white/10 flex flex-col items-center justify-center gap-1 select-none">
+              <div className="w-[110px] h-[110px] md:w-[150px] md:h-[150px] rounded-full border border-card-border p-1.5 bg-black/80 backdrop-blur-md shadow-[0_0_50px_rgba(59,130,246,0.25)] flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/profile.jpg" 
+                  alt="Mokshith H C" 
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    const fallback = document.getElementById('avatar-fallback');
+                    if (fallback) fallback.style.display = 'flex';
+                  }}
+                  className="w-full h-full rounded-full object-cover"
+                />
+                <div 
+                  id="avatar-fallback"
+                  className="hidden w-full h-full rounded-full bg-gradient-to-tr from-primary/10 via-secondary/20 to-accent/10 border border-white/10 flex flex-col items-center justify-center gap-1 select-none"
+                >
                   <FiCode className="text-2xl md:text-3xl text-accent animate-pulse" />
                   <span className="text-[10px] font-mono text-text-secondary tracking-widest uppercase">M_H_C</span>
                 </div>
@@ -234,22 +205,6 @@ export default function Hero() {
         </div>
 
       </div>
-      
-      {/* Down arrow indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.5 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 cursor-pointer text-text-secondary hover:text-text-primary z-20"
-        onClick={() => handleScrollTo("about")}
-      >
-        <span className="text-[10px] font-mono tracking-widest uppercase">Scroll Down</span>
-        <motion.div
-          animate={{ y: [0, 4, 0] }}
-          transition={{ repeat: Infinity, duration: 1.8 }}
-          className="w-1.5 h-1.5 rounded-full bg-accent"
-        />
-      </motion.div>
     </section>
   );
 }

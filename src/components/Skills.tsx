@@ -64,13 +64,13 @@ const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.1 },
+    transition: { staggerChildren: 0.05 },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, y: 5 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
 
 export default function Skills() {
@@ -90,8 +90,7 @@ export default function Skills() {
       <motion.div 
         variants={containerVariants}
         initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        animate="visible"
         className="grid grid-cols-1 md:grid-cols-2 gap-8"
       >
         {SKILL_CATEGORIES.map((cat, idx) => (
@@ -118,7 +117,7 @@ export default function Skills() {
               {cat.skills.map((skill, sIdx) => (
                 <div 
                   key={sIdx}
-                  className="p-4 rounded-2xl border border-white/[0.04] bg-white/[0.02] flex flex-col gap-2 relative overflow-hidden group hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300"
+                  className="p-4 rounded-2xl border border-white/[0.04] bg-white/[0.02] flex items-center justify-between relative overflow-hidden group hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300"
                 >
                   {/* Skill Inner Hover Glow */}
                   <div 
@@ -128,33 +127,13 @@ export default function Skills() {
                     }}
                   />
                   
-                  {/* Skill icon & Name */}
-                  <div className="flex items-center justify-between text-text-primary text-sm md:text-base relative z-10">
-                    <span className="font-medium">{skill.name}</span>
-                    <span className="text-text-secondary text-base group-hover:scale-110 transition-transform duration-300">
-                      {skill.icon}
-                    </span>
-                  </div>
-
-                  {/* Micro Progress Indicator */}
-                  <div className="flex items-center justify-between text-[10px] text-text-secondary font-mono mt-1 relative z-10">
-                    <span>Familiarity</span>
-                    <span>{skill.level}%</span>
-                  </div>
+                  {/* Skill Name */}
+                  <span className="font-medium text-sm md:text-base text-text-primary relative z-10">{skill.name}</span>
                   
-                  <div className="w-full h-1 bg-white/[0.04] rounded-full overflow-hidden relative mt-0.5 z-10">
-                    <motion.div 
-                      className="h-full rounded-full"
-                      style={{ 
-                        backgroundColor: cat.accentColor,
-                        boxShadow: `0 0 8px ${cat.accentColor}`
-                      }}
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 0.1 }}
-                    />
-                  </div>
+                  {/* Skill Icon */}
+                  <span className="text-text-secondary text-base group-hover:scale-110 transition-transform duration-300 relative z-10">
+                    {skill.icon}
+                  </span>
                 </div>
               ))}
             </div>

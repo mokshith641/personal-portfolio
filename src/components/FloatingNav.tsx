@@ -1,57 +1,26 @@
-"use client";
-
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 const NAV_ITEMS = [
-  { label: "Home", id: "hero" },
+  { label: "Home", id: "home" },
   { label: "About", id: "about" },
   { label: "Skills", id: "skills" },
-  { label: "Experience", id: "experience" },
   { label: "Projects", id: "projects" },
   { label: "Achievements", id: "achievements" },
   { label: "Contact", id: "contact" },
 ];
 
-export default function FloatingNav() {
-  const [activeSection, setActiveSection] = useState("hero");
-  const [scrollProgress, setScrollProgress] = useState(0);
+interface FloatingNavProps {
+  activePage: string;
+}
+
+export default function FloatingNav({ activePage }: FloatingNavProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      // Calculate scroll progress
-      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalScroll > 0) {
-        setScrollProgress(window.scrollY / totalScroll);
-      }
-
-      // Check active section
-      const scrollPosition = window.scrollY + 150; // offset for nav height
-
-      for (const item of NAV_ITEMS) {
-        const el = document.getElementById(item.id);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(item.id);
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const scrollToSection = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
+  const navigateToPage = (id: string) => {
+    window.location.hash = id === "home" ? "#/" : `#/${id}`;
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -62,7 +31,7 @@ export default function FloatingNav() {
           
           {/* Logo / Branding */}
           <button 
-            onClick={() => scrollToSection("hero")}
+            onClick={() => navigateToPage("home")}
             className="text-text-primary font-bold tracking-tight text-sm md:text-base cursor-pointer hover:opacity-80 flex items-center gap-1.5"
           >
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
@@ -72,11 +41,11 @@ export default function FloatingNav() {
           {/* Desktop Nav Items */}
           <div className="hidden md:flex items-center gap-1 h-full relative">
             {NAV_ITEMS.map((item) => {
-              const isActive = activeSection === item.id;
+              const isActive = activePage === item.id;
               return (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => navigateToPage(item.id)}
                   className={`relative text-xs font-medium px-3.5 py-1.5 rounded-full transition-colors duration-300 cursor-pointer ${
                     isActive ? "text-text-primary" : "text-text-secondary hover:text-text-primary"
                   }`}
@@ -85,7 +54,7 @@ export default function FloatingNav() {
                     <motion.div
                       layoutId="activeTabGlow"
                       className="absolute inset-0 bg-white/[0.06] border border-white/[0.08] rounded-full -z-10"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      transition={{ duration: 0.15 }}
                     />
                   )}
                   {item.label}
@@ -124,14 +93,6 @@ export default function FloatingNav() {
           >
             {isMobileMenuOpen ? <FiX /> : <FiMenu />}
           </button>
-
-          {/* Scrolling Progress Bar (integrated inside navbar border bottom) */}
-          <div className="absolute bottom-0 left-0 right-0 h-[1.5px] rounded-full overflow-hidden bg-white/[0.02]">
-            <motion.div 
-              className="h-full bg-gradient-to-r from-primary via-secondary to-accent"
-              style={{ scaleX: scrollProgress, transformOrigin: "0%" }}
-            />
-          </div>
         </nav>
       </header>
 
@@ -139,19 +100,19 @@ export default function FloatingNav() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -5 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            exit={{ opacity: 0, y: -5 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
             className="fixed inset-x-0 top-[72px] mx-4 p-5 rounded-3xl glass bg-black/90 backdrop-blur-lg border border-card-border z-40 flex flex-col gap-4 shadow-2xl md:hidden"
           >
             <div className="flex flex-col gap-2">
               {NAV_ITEMS.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => navigateToPage(item.id)}
                   className={`w-full text-left py-2.5 px-4 rounded-xl text-sm font-medium transition-colors ${
-                    activeSection === item.id 
+                    activePage === item.id 
                       ? "bg-white/[0.06] text-text-primary" 
                       : "text-text-secondary hover:text-text-primary hover:bg-white/[0.02]"
                   }`}

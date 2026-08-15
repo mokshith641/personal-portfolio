@@ -22,9 +22,9 @@ export default function About() {
         
         {/* Bio Card (Large - Spans 2 Cols on md+) */}
         <motion.div
-          whileInView={{ opacity: [0, 1], y: [20, 0] }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
           className="md:col-span-2 p-6 md:p-8 rounded-3xl glass bg-black/30 flex flex-col justify-between gap-6 border border-card-border relative overflow-hidden group"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -55,9 +55,9 @@ export default function About() {
 
         {/* Quick Stats / Certification Card */}
         <motion.div
-          whileInView={{ opacity: [0, 1], y: [20, 0] }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.15 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, delay: 0.05 }}
           className="p-6 rounded-3xl glass bg-black/30 flex flex-col justify-between gap-6 border border-card-border relative overflow-hidden group"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -101,9 +101,9 @@ export default function About() {
 
         {/* Education Card */}
         <motion.div
-          whileInView={{ opacity: [0, 1], y: [20, 0] }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
           className="p-6 rounded-3xl glass bg-black/30 flex flex-col justify-between gap-6 border border-card-border relative overflow-hidden group"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -139,9 +139,9 @@ export default function About() {
 
         {/* Interests Card (Spans 2 columns on md+) */}
         <motion.div
-          whileInView={{ opacity: [0, 1], y: [20, 0] }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.25 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, delay: 0.15 }}
           className="md:col-span-2 p-6 rounded-3xl glass bg-black/30 flex flex-col md:flex-row justify-between gap-6 border border-card-border relative overflow-hidden group"
         >
           <div className="flex flex-col justify-between gap-4 md:w-3/5">

@@ -31,13 +31,16 @@ export default function BackgroundGrid() {
     // Initialize particles
     const initParticles = () => {
       particles = [];
-      const particleCount = Math.min(Math.floor((width * height) / 25000), 60);
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const particleCount = prefersReducedMotion ? 0 : Math.min(Math.floor((width * height) / 50000), 30);
+      const speedMultiplier = prefersReducedMotion ? 0 : 0.65;
+      
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.3,
-          vy: (Math.random() - 0.5) * 0.3,
+          vx: (Math.random() - 0.5) * 0.3 * speedMultiplier,
+          vy: (Math.random() - 0.5) * 0.3 * speedMultiplier,
           radius: Math.random() * 1.5 + 0.5,
           alpha: Math.random() * 0.4 + 0.1,
           targetAlpha: Math.random() * 0.4 + 0.1,
@@ -131,16 +134,13 @@ export default function BackgroundGrid() {
 
       {/* Ambient Mesh Orbs */}
       <div 
-        className="orb-glow bg-primary w-[40vw] h-[40vw] top-[-10vw] left-[-10vw] animate-pulse"
-        style={{ animationDuration: "12s" }}
+        className="orb-glow bg-primary w-[40vw] h-[40vw] top-[-10vw] left-[-10vw]"
       />
       <div 
-        className="orb-glow bg-secondary w-[45vw] h-[45vw] bottom-[-15vw] right-[-10vw] animate-pulse"
-        style={{ animationDuration: "16s", animationDelay: "2s" }}
+        className="orb-glow bg-secondary w-[45vw] h-[45vw] bottom-[-15vw] right-[-10vw]"
       />
       <div 
-        className="orb-glow bg-accent w-[35vw] h-[35vw] top-[30%] left-[60%] animate-pulse"
-        style={{ animationDuration: "20s", animationDelay: "4s" }}
+        className="orb-glow bg-accent w-[35vw] h-[35vw] top-[30%] left-[60%]"
       />
     </div>
   );

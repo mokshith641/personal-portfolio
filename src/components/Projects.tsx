@@ -1,9 +1,7 @@
-"use client";
-
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiGithub, FiExternalLink, FiX, FiInfo, FiCheck, FiAlertCircle } from "react-icons/fi";
-import { SiPython, SiDjango, SiFastapi, SiReact, SiSupabase, SiPostgresql, SiLangchain } from "react-icons/si";
+import { FiGithub, FiX, FiInfo, FiCheck, FiAlertCircle, FiMic } from "react-icons/fi";
+import { SiPython, SiDjango, SiFastapi, SiReact, SiSupabase, SiLangchain } from "react-icons/si";
 
 interface Project {
   id: string;
@@ -37,7 +35,7 @@ export default function Projects() {
       icon: <SiLangchain />,
       tags: ["FastAPI", "React", "Supabase", "LangChain", "Qdrant", "RAG"],
       techIcons: [<SiReact key="1" />, <SiFastapi key="2" />, <SiLangchain key="3" />, <SiSupabase key="4" />],
-      github: "https://github.com/mokshith641/research-paper-assistant",
+      github: "https://github.com/mokshith641", // Will update with direct link later
       live: "https://research-assistant.mokshith.dev",
       visual: (
         <div className="w-full h-full bg-slate-950 flex flex-col justify-between p-4 font-mono text-[10px] text-accent/80 border-b border-card-border relative overflow-hidden select-none">
@@ -46,7 +44,7 @@ export default function Projects() {
           
           <div className="flex items-center justify-between border-b border-white/[0.05] pb-2 text-text-secondary text-[8px]">
             <span>rag_pipeline_agent.py</span>
-            <span className="text-emerald-500 flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" /> ACTIVE</span>
+            <span className="text-emerald-500 flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> ACTIVE</span>
           </div>
 
           <div className="flex flex-col gap-1.5 py-2">
@@ -148,67 +146,70 @@ export default function Projects() {
       }
     },
     {
-      id: "smart-notification",
-      title: "Smart Notification System",
-      shortDesc: "Automated alert engine managing rule-based event routing, dynamic notification formats, and REST integrations.",
-      tagline: "Rule-Based Notification Router",
-      icon: <SiFastapi />,
-      tags: ["Python", "FastAPI", "REST APIs", "Asyncio", "Pydantic"],
+      id: "voice-bank",
+      title: "Voice Bank Assistant",
+      shortDesc: "Intelligent voice-driven banking assistant implementing acoustic voice commands, secure speaker authentication, and mock account transaction handlers.",
+      tagline: "Speech Processing & Audio Verification",
+      icon: <FiMic />,
+      tags: ["Python", "SpeechRecognition", "Pyttsx3", "Flask", "Signal Processing"],
       techIcons: [<SiPython key="1" />, <SiFastapi key="2" />],
-      github: "https://github.com/mokshith641/smart-notification-system",
-      live: "https://notifications.mokshith.dev",
+      github: "https://github.com/mokshith641/voice-bank-assistant",
+      live: "https://voicebank.mokshith.dev",
       visual: (
-        <div className="w-full h-full bg-slate-950 flex flex-col justify-between p-4 font-mono text-[10px] text-purple-400/80 border-b border-card-border relative overflow-hidden select-none">
+        <div className="w-full h-full bg-slate-950 flex flex-col justify-between p-4 font-mono text-[10px] text-accent/80 border-b border-card-border relative overflow-hidden select-none">
           {/* Subtle bg glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-purple-500/10 blur-xl pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-emerald-500/10 blur-xl pointer-events-none" />
           
           <div className="flex items-center justify-between border-b border-white/[0.05] pb-2 text-text-secondary text-[8px]">
-            <span>router_rules.json</span>
-            <span className="text-purple-400 font-bold">ASYNC ROUTER</span>
+            <span>voice_bank_agent.py</span>
+            <span className="text-accent flex items-center gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" /> LISTENING
+            </span>
           </div>
 
-          <div className="flex flex-col gap-1 py-2 text-[8px] text-text-secondary">
-            <div>
-              &gt; Event triggered: <span className="text-text-primary font-semibold">UserSignup</span>
-            </div>
-            <div>
-              &gt; Match rule: <span className="text-purple-300">"send_welcome_sms" &amp; "send_slack"</span>
+          <div className="flex flex-col gap-1 py-1.5">
+            <div className="text-text-primary flex items-center gap-1.5 text-[9px]">
+              <span className="text-secondary">🎤</span> Input: <span className="text-white italic">"Transfer $500 to savings"</span>
             </div>
             
-            {/* Visual notification bubbles */}
-            <div className="flex gap-2 mt-2">
-              <div className="flex-1 p-1 bg-white/[0.03] border border-white/[0.08] rounded text-text-primary flex items-center gap-1.5">
-                <span className="text-purple-400">💬</span> SMS Sent
-              </div>
-              <div className="flex-1 p-1 bg-white/[0.03] border border-white/[0.08] rounded text-text-primary flex items-center gap-1.5">
-                <span className="text-green-400">📟</span> Slack Push
-              </div>
+            {/* Voice Waveform mock bars */}
+            <div className="flex items-center gap-1 h-6 my-1 pl-2">
+              <div className="w-[3px] bg-accent/80 h-3 rounded animate-pulse" style={{ animationDelay: "0.1s" }} />
+              <div className="w-[3px] bg-accent h-5 rounded animate-pulse" style={{ animationDelay: "0.3s" }} />
+              <div className="w-[3px] bg-accent/80 h-2 rounded animate-pulse" style={{ animationDelay: "0.5s" }} />
+              <div className="w-[3px] bg-accent h-6 rounded animate-pulse" style={{ animationDelay: "0.2s" }} />
+              <div className="w-[3px] bg-accent/80 h-4 rounded animate-pulse" style={{ animationDelay: "0.4s" }} />
+              <div className="w-[3px] bg-accent/40 h-1.5 rounded animate-pulse" style={{ animationDelay: "0.6s" }} />
+            </div>
+
+            <div className="text-emerald-400 pl-3 border-l border-white/10 text-[9px] flex items-center gap-1">
+              &gt; Voice profile verified: Mokshith H C
             </div>
           </div>
 
           <div className="border-t border-white/[0.05] pt-1.5 text-[8px] text-emerald-400 flex items-center gap-1">
-            <span>✔</span> Event broadcast completed in 12ms.
+            <span>✔</span> Verbal transaction authorized.
           </div>
         </div>
       ),
       caseStudy: {
-        problem: "Enterprise application architectures frequently suffer from tightly-coupled alerts, making it difficult to alter notification rules, routes, or channels without modifying core system logic.",
-        solution: "Built a decoupled notification broker using FastAPI. Events are dispatched via REST APIs and processed against a dynamic, JSON-structured rule engine. The application utilizes async programming paradigms to parallelize SMS, email, and Slack integrations, providing non-blocking alert operations.",
+        problem: "Traditional mobile banking interfaces are complex for visually impaired users. Additionally, password-based validation on mobile is prone to shoulder-surfing and credentials harvesting.",
+        solution: "Engineered an intelligent voice-driven banking broker in Python. The system processes verbal banking requests (such as check balances, transfers, and updates) using SpeechRecognition APIs, provides acoustic guidance with text-to-speech feedback (Pyttsx3), and performs biometric verification using speaker voiceprints to authenticate transactions securely.",
         features: [
-          "High-performance REST API routing endpoints built on FastAPI.",
-          "Dynamic rule-based criteria evaluating event parameters.",
-          "Asynchronous message worker handlers for parallel delivery channel broadcasts.",
-          "Data validation schemas utilizing Pydantic to ensure event schema integrity.",
-          "Collaborative version control workflow integrated with Git and GitHub."
+          "Acoustic Speech-to-Text and Text-to-Speech conversational wrapper.",
+          "Dynamic intent matching engine mapping commands to banking endpoints.",
+          "Voice biometrics matching for secure passwordless transaction approval.",
+          "Interactive command dashboard displaying verbal signals in real-time.",
+          "Decoupled banking transactions backend mock layer."
         ],
-        challenges: "Managing delivery retry mechanisms when external integration endpoints (like Twilio or Email service) returned rate errors.",
-        learnings: "Implemented exponential backoff algorithms and async task queues to queue failing notifications and retry without blocking active alerts."
+        challenges: "Background ambient noises occasionally corrupted phonetic transcription, triggering authentication failures.",
+        learnings: "Implemented dual-tier digital filtering and noise reduction filters on the input microphone signals, improving speech parsing accuracy by 30%."
       }
     }
   ];
 
   return (
-    <section id="projects" className="py-24 px-6 md:px-12 xl:px-24 max-w-6xl mx-auto scroll-mt-16">
+    <section id="projects" className="py-12 px-6 md:px-12 xl:px-24 max-w-6xl mx-auto scroll-mt-16">
       
       {/* Section Header */}
       <div className="flex flex-col items-start text-left mb-16">
@@ -224,10 +225,9 @@ export default function Projects() {
         {projects.map((project, idx) => (
           <motion.div
             key={project.id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: idx * 0.1 }}
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: idx * 0.05 }}
             className="flex flex-col rounded-3xl glass bg-black/20 border border-card-border overflow-hidden group hover:border-white/15 transition-all duration-300 relative"
           >
             {/* Visual Showcase (custom SVG layouts) */}
@@ -267,29 +267,18 @@ export default function Projects() {
                   onClick={() => setActiveProject(project)}
                   className="text-xs font-mono text-accent hover:text-white flex items-center gap-1 cursor-pointer transition-colors"
                 >
-                  <FiInfo /> View Case Study
+                  <FiX className="rotate-45" /> View Case Study
                 </button>
                 
-                <div className="flex items-center gap-3">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-text-secondary hover:text-text-primary text-sm transition-colors"
-                    title="View GitHub Repository"
-                  >
-                    <FiGithub />
-                  </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-text-secondary hover:text-text-primary text-sm transition-colors"
-                    title="View Demo"
-                  >
-                    <FiExternalLink />
-                  </a>
-                </div>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-secondary hover:text-text-primary text-sm transition-colors flex items-center gap-1.5 font-mono text-xs"
+                  title="View GitHub Repository"
+                >
+                  <FiGithub /> GitHub
+                </a>
               </div>
             </div>
           </motion.div>
@@ -306,16 +295,17 @@ export default function Projects() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
               onClick={() => setActiveProject(null)}
               className="absolute inset-0 bg-black/80 backdrop-blur-md"
             />
 
             {/* Modal Body */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              initial={{ opacity: 0, scale: 0.98, y: 5 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ type: "spring", duration: 0.5 }}
+              exit={{ opacity: 0, scale: 0.98, y: 5 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-3xl glass bg-slate-900 border border-card-border p-6 md:p-8 flex flex-col gap-6 shadow-2xl no-scrollbar select-text"
             >
               {/* Close Button */}
@@ -401,24 +391,14 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <a
-                    href={activeProject.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 text-xs font-semibold rounded-full border border-card-border bg-white/[0.04] hover:bg-white/[0.08] hover:border-white/20 text-text-primary flex items-center gap-1.5 transition-all"
-                  >
-                    <FiGithub /> GitHub
-                  </a>
-                  <a
-                    href={activeProject.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 text-xs font-semibold rounded-full bg-gradient-to-r from-primary to-secondary text-white flex items-center gap-1.5 shadow-[0_0_15px_rgba(139,92,246,0.25)] hover:scale-[1.02] transition-all"
-                  >
-                    <FiExternalLink /> Live Demo
-                  </a>
-                </div>
+                <a
+                  href={activeProject.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2.5 text-xs font-semibold rounded-full bg-gradient-to-r from-primary to-secondary text-white flex items-center gap-1.5 shadow-[0_0_15px_rgba(139,92,246,0.25)] hover:scale-[1.02] transition-all font-mono"
+                >
+                  <FiGithub /> GitHub Repository
+                </a>
               </div>
 
             </motion.div>

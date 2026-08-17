@@ -25,7 +25,7 @@ export default function About() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3 }}
-          className="md:col-span-2 p-6 md:p-8 rounded-3xl glass bg-black/30 flex flex-col justify-between gap-6 border border-card-border relative overflow-hidden group"
+          className="md:col-span-2 p-6 md:p-8 rounded-3xl glass bg-white/60 flex flex-col justify-between gap-6 border border-card-border relative overflow-hidden group shadow-sm"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           
@@ -47,9 +47,9 @@ export default function About() {
           </div>
 
           <div className="flex flex-wrap gap-3 mt-2 text-xs font-mono relative z-10">
-            <span className="px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-text-secondary">#applied-ai</span>
-            <span className="px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-text-secondary">#backend-architecture</span>
-            <span className="px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-text-secondary">#vector-embeddings</span>
+            <span className="px-3 py-1.5 rounded-full bg-slate-100/80 border border-slate-200/60 text-text-secondary">#applied-ai</span>
+            <span className="px-3 py-1.5 rounded-full bg-slate-100/80 border border-slate-200/60 text-text-secondary">#backend-architecture</span>
+            <span className="px-3 py-1.5 rounded-full bg-slate-100/80 border border-slate-200/60 text-text-secondary">#vector-embeddings</span>
           </div>
         </motion.div>
 
@@ -58,7 +58,7 @@ export default function About() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.05 }}
-          className="p-6 rounded-3xl glass bg-black/30 flex flex-col justify-between gap-6 border border-card-border relative overflow-hidden group"
+          className="p-6 rounded-3xl glass bg-white/60 flex flex-col justify-between gap-6 border border-card-border relative overflow-hidden group shadow-sm"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           
@@ -104,7 +104,7 @@ export default function About() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.1 }}
-          className="p-6 rounded-3xl glass bg-black/30 flex flex-col justify-between gap-6 border border-card-border relative overflow-hidden group"
+          className="p-6 rounded-3xl glass bg-white/60 flex flex-col justify-between gap-6 border border-card-border relative overflow-hidden group shadow-sm"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
           
@@ -122,13 +122,13 @@ export default function About() {
                 <div className="text-accent/80 text-[10px] font-mono mt-0.5">CGPA: 8.10 | 2023 - Present</div>
               </div>
               
-              <div className="border-l-2 border-white/10 pl-3">
+              <div className="border-l-2 border-slate-200 pl-3">
                 <div className="font-semibold text-text-primary text-[13px]">Pre-University Course (PUC)</div>
                 <div className="text-text-secondary text-[11px]">BGS Institution, Chikkamagaluru</div>
                 <div className="text-text-secondary/70 text-[10px] font-mono mt-0.5">Aggregate: 87.17% | 2021 - 2023</div>
               </div>
 
-              <div className="border-l-2 border-white/10 pl-3">
+              <div className="border-l-2 border-slate-200 pl-3">
                 <div className="font-semibold text-text-primary text-[13px]">SSLC Secondary School</div>
                 <div className="text-text-secondary text-[11px]">MDRS, Sakaleshpura</div>
                 <div className="text-text-secondary/70 text-[10px] font-mono mt-0.5">Aggregate: 92.62% | Completed 2021</div>
@@ -142,7 +142,7 @@ export default function About() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.15 }}
-          className="md:col-span-2 p-6 rounded-3xl glass bg-black/30 flex flex-col md:flex-row justify-between gap-6 border border-card-border relative overflow-hidden group"
+          className="md:col-span-2 p-6 rounded-3xl glass bg-white/60 flex flex-col md:flex-row justify-between gap-6 border border-card-border relative overflow-hidden group shadow-sm"
         >
           <div className="flex flex-col justify-between gap-4 md:w-3/5">
             <div className="flex flex-col gap-4">
@@ -159,20 +159,20 @@ export default function About() {
             </div>
 
             <div className="flex flex-wrap gap-2 text-[11px] font-mono">
-              <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.06] text-text-secondary hover:text-text-primary transition-colors">
+              <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100/80 border border-slate-200/60 text-text-secondary hover:text-text-primary transition-colors">
                 <FaChessKnight className="text-amber-500" /> Chess Tactician
               </span>
-              <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.06] text-text-secondary hover:text-text-primary transition-colors">
+              <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100/80 border border-slate-200/60 text-text-secondary hover:text-text-primary transition-colors">
                 <FaTv className="text-purple-400" /> Anime Enthusiast
               </span>
-              <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.06] text-text-secondary hover:text-text-primary transition-colors">
+              <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100/80 border border-slate-200/60 text-text-secondary hover:text-text-primary transition-colors">
                 <FaRunning className="text-success" /> Sports Fan
               </span>
             </div>
           </div>
 
           {/* Graphical Chessboard Grid Decorator */}
-          <div className="flex items-center justify-center p-2 border border-card-border rounded-2xl bg-black/40 backdrop-blur-sm self-center">
+          <div className="flex items-center justify-center p-2 border border-card-border rounded-2xl bg-white backdrop-blur-sm self-center shadow-sm">
             <div className="grid grid-cols-5 grid-rows-5 gap-[2px] w-[140px] h-[140px] md:w-[150px] md:h-[150px] overflow-hidden rounded">
               {Array.from({ length: 25 }).map((_, idx) => {
                 const row = Math.floor(idx / 5);
@@ -184,7 +184,7 @@ export default function About() {
                   <div
                     key={idx}
                     className={`flex items-center justify-center rounded-[1px] transition-colors duration-300 ${
-                      isBlack ? "bg-slate-800" : "bg-slate-900/50"
+                      isBlack ? "bg-slate-200" : "bg-slate-50"
                     }`}
                   >
                     {hasPiece && (

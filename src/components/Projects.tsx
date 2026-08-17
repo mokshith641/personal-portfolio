@@ -38,32 +38,32 @@ export default function Projects() {
       github: "https://github.com/mokshith641", // Will update with direct link later
       live: "https://research-assistant.mokshith.dev",
       visual: (
-        <div className="w-full h-full bg-slate-950 flex flex-col justify-between p-4 font-mono text-[10px] text-accent/80 border-b border-card-border relative overflow-hidden select-none">
+        <div className="w-full h-full bg-slate-100 flex flex-col justify-between p-4 font-mono text-[10px] text-accent/90 border-b border-card-border relative overflow-hidden select-none">
           {/* Subtle bg glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-cyan-500/10 blur-xl pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-cyan-500/5 blur-xl pointer-events-none" />
           
-          <div className="flex items-center justify-between border-b border-white/[0.05] pb-2 text-text-secondary text-[8px]">
+          <div className="flex items-center justify-between border-b border-slate-200 pb-2 text-text-secondary text-[8px]">
             <span>rag_pipeline_agent.py</span>
-            <span className="text-emerald-500 flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> ACTIVE</span>
+            <span className="text-emerald-600 flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-600" /> ACTIVE</span>
           </div>
 
           <div className="flex flex-col gap-1.5 py-2">
             <div className="text-text-primary flex items-center gap-1.5">
               <span className="text-secondary">📥</span> Uploading paper: <span className="text-cyan-400">attention_is_all_you_need.pdf</span>
             </div>
-            <div className="text-text-secondary pl-3 border-l border-white/10">
+            <div className="text-text-secondary pl-3 border-l border-slate-200">
               [1] Chunking document: 24 chunks generated
             </div>
-            <div className="text-text-secondary pl-3 border-l border-white/10">
+            <div className="text-text-secondary pl-3 border-l border-slate-200">
               [2] Generating embeddings: OpenAI text-embedding-ada-002
             </div>
-            <div className="text-emerald-400 pl-3 border-l border-white/10 flex items-center gap-1.5">
-              [3] Vector index synchronized: Qdrant cloud <span className="text-[8px] bg-emerald-500/15 text-emerald-400 px-1 py-0.2 rounded">SUCCESS</span>
+            <div className="text-emerald-600 pl-3 border-l border-slate-200 flex items-center gap-1.5">
+              [3] Vector index synchronized: Qdrant cloud <span className="text-[8px] bg-emerald-100 text-emerald-600 px-1 py-0.2 rounded font-bold">SUCCESS</span>
             </div>
           </div>
 
-          <div className="border-t border-white/[0.05] pt-2 text-[9px] text-text-primary flex items-center gap-1.5">
-            <span className="text-secondary">💡</span> Ask AI: <span className="text-white">Explain Multi-Head Attention...</span>
+          <div className="border-t border-slate-200 pt-2 text-[9px] text-text-primary flex items-center gap-1.5">
+            <span className="text-secondary">💡</span> Ask AI: <span className="text-text-primary">Explain Multi-Head Attention...</span>
           </div>
         </div>
       ),
@@ -92,13 +92,13 @@ export default function Projects() {
       github: "https://github.com/mokshith641/career-compass",
       live: "https://career-compass.mokshith.dev",
       visual: (
-        <div className="w-full h-full bg-slate-950 flex flex-col justify-between p-4 font-mono text-[10px] text-primary/80 border-b border-card-border relative overflow-hidden select-none">
+        <div className="w-full h-full bg-slate-100 flex flex-col justify-between p-4 font-mono text-[10px] text-primary/90 border-b border-card-border relative overflow-hidden select-none">
           {/* Subtle bg glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-blue-500/10 blur-xl pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-blue-500/5 blur-xl pointer-events-none" />
           
-          <div className="flex items-center justify-between border-b border-white/[0.05] pb-2 text-text-secondary text-[8px]">
+          <div className="flex items-center justify-between border-b border-slate-200 pb-2 text-text-secondary text-[8px]">
             <span>nlp_recommendation_engine.py</span>
-            <span className="text-blue-400">TF-IDF MATCH</span>
+            <span className="text-blue-600">TF-IDF MATCH</span>
           </div>
 
           <div className="flex flex-col gap-1 py-1 text-[9px]">
@@ -112,20 +112,20 @@ export default function Projects() {
             </div>
             
             {/* Mock Vector Match Chart */}
-            <div className="mt-1.5 flex flex-col gap-1 border-t border-white/[0.05] pt-1">
+            <div className="mt-1.5 flex flex-col gap-1 border-t border-slate-200 pt-1">
               <div className="flex items-center justify-between">
                 <span className="text-text-secondary text-[8px]">Software Eng:</span>
-                <span className="text-blue-400">92% similarity</span>
+                <span className="text-blue-600">92% similarity</span>
               </div>
-              <div className="w-full bg-white/[0.04] h-1 rounded-full overflow-hidden">
-                <div className="bg-blue-500 h-full w-[92%]" />
+              <div className="w-full bg-slate-200 h-1 rounded-full overflow-hidden">
+                <div className="bg-blue-600 h-full w-[92%]" />
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-text-secondary text-[8px]">Data Engineer:</span>
-                <span className="text-purple-400">76% similarity</span>
+                <span className="text-purple-600">76% similarity</span>
               </div>
-              <div className="w-full bg-white/[0.04] h-1 rounded-full overflow-hidden">
-                <div className="bg-purple-500 h-full w-[76%]" />
+              <div className="w-full bg-slate-200 h-1 rounded-full overflow-hidden">
+                <div className="bg-purple-600 h-full w-[76%]" />
               </div>
             </div>
           </div>
@@ -156,11 +156,11 @@ export default function Projects() {
       github: "https://github.com/mokshith641/voice-bank-assistant",
       live: "https://voicebank.mokshith.dev",
       visual: (
-        <div className="w-full h-full bg-slate-950 flex flex-col justify-between p-4 font-mono text-[10px] text-accent/80 border-b border-card-border relative overflow-hidden select-none">
+        <div className="w-full h-full bg-slate-100 flex flex-col justify-between p-4 font-mono text-[10px] text-accent/90 border-b border-card-border relative overflow-hidden select-none">
           {/* Subtle bg glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-emerald-500/10 blur-xl pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-emerald-500/5 blur-xl pointer-events-none" />
           
-          <div className="flex items-center justify-between border-b border-white/[0.05] pb-2 text-text-secondary text-[8px]">
+          <div className="flex items-center justify-between border-b border-slate-200 pb-2 text-text-secondary text-[8px]">
             <span>voice_bank_agent.py</span>
             <span className="text-accent flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" /> LISTENING
@@ -182,12 +182,12 @@ export default function Projects() {
               <div className="w-[3px] bg-accent/40 h-1.5 rounded animate-pulse" style={{ animationDelay: "0.6s" }} />
             </div>
 
-            <div className="text-emerald-400 pl-3 border-l border-white/10 text-[9px] flex items-center gap-1">
+            <div className="text-emerald-600 pl-3 border-l border-slate-200 text-[9px] flex items-center gap-1">
               &gt; Voice profile verified: Mokshith H C
             </div>
           </div>
 
-          <div className="border-t border-white/[0.05] pt-1.5 text-[8px] text-emerald-400 flex items-center gap-1">
+          <div className="border-t border-slate-200 pt-1.5 text-[8px] text-emerald-600 flex items-center gap-1">
             <span>✔</span> Verbal transaction authorized.
           </div>
         </div>
@@ -228,10 +228,10 @@ export default function Projects() {
             initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: idx * 0.05 }}
-            className="flex flex-col rounded-3xl glass bg-black/20 border border-card-border overflow-hidden group hover:border-white/15 transition-all duration-300 relative"
+            className="flex flex-col rounded-3xl glass bg-white/60 border border-card-border overflow-hidden group hover:border-slate-300 transition-all duration-300 relative shadow-sm"
           >
             {/* Visual Showcase (custom SVG layouts) */}
-            <div className="h-44 w-full relative border-b border-card-border bg-slate-950/60 overflow-hidden">
+            <div className="h-44 w-full relative border-b border-card-border bg-slate-50 overflow-hidden">
               {project.visual}
             </div>
 
@@ -247,7 +247,7 @@ export default function Projects() {
                       {project.tagline}
                     </span>
                   </div>
-                  <div className="flex items-center gap-1 text-sm bg-white/[0.04] px-2 py-0.5 rounded border border-white/[0.06]">
+                  <div className="flex items-center gap-1 text-sm bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
                     {project.techIcons}
                   </div>
                 </div>
@@ -262,7 +262,7 @@ export default function Projects() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex items-center justify-between border-t border-white/[0.05] pt-4">
+              <div className="flex items-center justify-between border-t border-slate-200 pt-4">
                 <button
                   onClick={() => setActiveProject(project)}
                   className="text-xs font-mono text-accent hover:text-white flex items-center gap-1 cursor-pointer transition-colors"
@@ -297,7 +297,7 @@ export default function Projects() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={() => setActiveProject(null)}
-              className="absolute inset-0 bg-black/80 backdrop-blur-md"
+              className="absolute inset-0 bg-black/40 backdrop-blur-md"
             />
 
             {/* Modal Body */}
@@ -306,19 +306,19 @@ export default function Projects() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.98, y: 5 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-3xl glass bg-slate-900 border border-card-border p-6 md:p-8 flex flex-col gap-6 shadow-2xl no-scrollbar select-text"
+              className="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-3xl glass bg-white border border-card-border p-6 md:p-8 flex flex-col gap-6 shadow-2xl no-scrollbar select-text"
             >
               {/* Close Button */}
               <button
                 onClick={() => setActiveProject(null)}
-                className="absolute top-4 right-4 text-text-secondary hover:text-text-primary p-1 bg-white/[0.04] border border-white/[0.08] hover:border-white/20 transition-all rounded-full cursor-pointer"
+                className="absolute top-4 right-4 text-text-secondary hover:text-text-primary p-1 bg-slate-100 border border-slate-200 hover:border-slate-300 transition-all rounded-full cursor-pointer"
                 aria-label="Close case study"
               >
                 <FiX className="text-lg" />
               </button>
 
               {/* Modal Header */}
-              <div className="flex flex-col gap-2 border-b border-white/[0.05] pb-4">
+              <div className="flex flex-col gap-2 border-b border-slate-200 pb-4">
                 <span className="text-[10px] font-mono tracking-widest text-accent uppercase flex items-center gap-1.5">
                   {activeProject.icon} {activeProject.tagline}
                 </span>
@@ -335,7 +335,7 @@ export default function Projects() {
                   <h5 className="font-bold text-text-primary text-[13px] flex items-center gap-1.5">
                     <FiAlertCircle className="text-red-500" /> The Challenge / Problem
                   </h5>
-                  <p className="text-xs leading-relaxed pl-5 border-l border-white/5 bg-white/[0.01] p-2 rounded">
+                  <p className="text-xs leading-relaxed pl-5 border-l border-slate-200 bg-slate-50 p-2 rounded">
                     {activeProject.caseStudy.problem}
                   </p>
                 </div>
@@ -345,7 +345,7 @@ export default function Projects() {
                   <h5 className="font-bold text-text-primary text-[13px] flex items-center gap-1.5">
                     <FiCheck className="text-emerald-500" /> Proposed Architecture / Solution
                   </h5>
-                  <p className="text-xs leading-relaxed pl-5 border-l border-white/5 bg-white/[0.01] p-2 rounded">
+                  <p className="text-xs leading-relaxed pl-5 border-l border-slate-200 bg-slate-50 p-2 rounded">
                     {activeProject.caseStudy.solution}
                   </p>
                 </div>
@@ -355,7 +355,7 @@ export default function Projects() {
                   <h5 className="font-bold text-text-primary text-[13px]">Key Features Implemented</h5>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
                     {activeProject.caseStudy.features.map((feat, fIdx) => (
-                      <li key={fIdx} className="flex items-start gap-2 bg-white/[0.02] border border-white/[0.04] p-2 rounded">
+                      <li key={fIdx} className="flex items-start gap-2 bg-slate-50 border border-slate-100 p-2 rounded">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
                         <span>{feat}</span>
                       </li>
@@ -365,13 +365,13 @@ export default function Projects() {
 
                 {/* Grid Splitter for Challenges & Learnings */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="flex flex-col gap-1.5 p-3 rounded-2xl bg-white/[0.02] border border-white/[0.04]">
+                  <div className="flex flex-col gap-1.5 p-3 rounded-2xl bg-slate-50 border border-slate-100">
                     <h6 className="font-bold text-[11px] text-text-primary uppercase tracking-wider">Technical Hurdle</h6>
                     <p className="text-[11px] leading-relaxed text-text-secondary">
                       {activeProject.caseStudy.challenges}
                     </p>
                   </div>
-                  <div className="flex flex-col gap-1.5 p-3 rounded-2xl bg-white/[0.02] border border-white/[0.04]">
+                  <div className="flex flex-col gap-1.5 p-3 rounded-2xl bg-slate-50 border border-slate-100">
                     <h6 className="font-bold text-[11px] text-accent uppercase tracking-wider">Core Takeaways</h6>
                     <p className="text-[11px] leading-relaxed text-text-secondary">
                       {activeProject.caseStudy.learnings}
@@ -382,10 +382,10 @@ export default function Projects() {
               </div>
 
               {/* Modal Footer (Cta links) */}
-              <div className="flex items-center justify-between border-t border-white/[0.05] pt-4 mt-2">
+              <div className="flex items-center justify-between border-t border-slate-200 pt-4 mt-2">
                 <div className="flex gap-1.5 font-mono text-[10px]">
                   {activeProject.tags.slice(0, 3).map((tag, tIdx) => (
-                    <span key={tIdx} className="px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.08]">
+                    <span key={tIdx} className="px-2 py-0.5 rounded bg-slate-100 border border-slate-200">
                       {tag}
                     </span>
                   ))}

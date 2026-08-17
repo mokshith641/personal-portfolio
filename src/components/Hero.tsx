@@ -66,7 +66,7 @@ export default function Hero() {
             transition={{ duration: 0.3, delay: 0.05 }}
             className="flex flex-col gap-1"
           >
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-text-primary via-white to-text-secondary select-none leading-tight">
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-text-primary via-slate-700 to-text-secondary select-none leading-tight">
               Mokshith H C
             </h1>
             
@@ -106,7 +106,7 @@ export default function Hero() {
             {/* SVG Interactive Neural Network Nodes */}
             <svg 
               viewBox="0 0 100 100" 
-              className="w-full h-full text-white/10 select-none pointer-events-none filter drop-shadow-[0_0_15px_rgba(34,211,238,0.2)]"
+              className="w-full h-full text-black/5 select-none pointer-events-none filter drop-shadow-[0_0_8px_rgba(37,99,235,0.08)]"
             >
               {/* Connection Lines */}
               <motion.line x1="20" y1="50" x2="45" y2="25" stroke="rgba(59, 130, 246, 0.25)" strokeWidth="0.5" />
@@ -180,7 +180,7 @@ export default function Hero() {
 
             {/* Glowing Core Avatar Frame with image support and fallback */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-[110px] h-[110px] md:w-[150px] md:h-[150px] rounded-full border border-card-border p-1.5 bg-black/80 backdrop-blur-md shadow-[0_0_50px_rgba(59,130,246,0.25)] flex items-center justify-center overflow-hidden">
+              <div className="w-[110px] h-[110px] md:w-[150px] md:h-[150px] rounded-full border border-card-border p-1.5 bg-white/90 backdrop-blur-md shadow-[0_4px_30px_rgba(37,99,235,0.1)] flex items-center justify-center overflow-hidden">
                 <img 
                   src="/profile.jpg" 
                   alt="Mokshith H C" 
@@ -193,7 +193,7 @@ export default function Hero() {
                 />
                 <div 
                   id="avatar-fallback"
-                  className="hidden w-full h-full rounded-full bg-gradient-to-tr from-primary/10 via-secondary/20 to-accent/10 border border-white/10 flex flex-col items-center justify-center gap-1 select-none"
+                  className="hidden w-full h-full rounded-full bg-gradient-to-tr from-primary/10 via-secondary/20 to-accent/10 border border-black/5 flex flex-col items-center justify-center gap-1 select-none"
                 >
                   <FiCode className="text-2xl md:text-3xl text-accent animate-pulse" />
                   <span className="text-[10px] font-mono text-text-secondary tracking-widest uppercase">M_H_C</span>

@@ -59,15 +59,15 @@ export default function LoadingScreen() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="fixed inset-0 bg-[#030712] z-50 flex flex-col items-center justify-center p-6 text-left select-none font-mono"
+          className="fixed inset-0 bg-[#f8fafc] z-50 flex flex-col items-center justify-center p-6 text-left select-none font-mono"
         >
           {/* Subtle glow background */}
-          <div className="absolute w-[300px] h-[300px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute w-[300px] h-[300px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 
           <div className="w-full max-w-md flex flex-col gap-4 relative">
             
             {/* Terminal Header */}
-            <div className="flex items-center gap-2 pb-2 border-b border-white/[0.06] text-text-secondary text-xs">
+            <div className="flex items-center gap-2 pb-2 border-b border-slate-200 text-text-secondary text-xs">
               <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
               <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
               <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
@@ -98,7 +98,7 @@ export default function LoadingScreen() {
               </div>
 
               {/* Glowing bar */}
-              <div className="w-full h-[3px] bg-white/[0.05] rounded-full overflow-hidden relative">
+              <div className="w-full h-[3px] bg-slate-200 rounded-full overflow-hidden relative">
                 <motion.div
                   className="h-full bg-gradient-to-r from-primary via-secondary to-accent"
                   style={{ width: `${progress}%` }}

@@ -13,7 +13,7 @@ const SKILL_CATEGORIES = [
   {
     title: "Programming & Core",
     icon: <FiTerminal />,
-    color: "from-primary/20 to-primary/5 border-primary/20 text-primary",
+    color: "from-primary/10 to-primary/[0.02] border-primary/15 text-primary",
     accentColor: "#3B82F6",
     skills: [
       { name: "Python", icon: <SiPython />, level: 90 },
@@ -25,7 +25,7 @@ const SKILL_CATEGORIES = [
   {
     title: "Backend & Databases",
     icon: <FiDatabase />,
-    color: "from-secondary/20 to-secondary/5 border-secondary/20 text-secondary",
+    color: "from-secondary/10 to-secondary/[0.02] border-secondary/15 text-secondary",
     accentColor: "#8B5CF6",
     skills: [
       { name: "Django", icon: <SiDjango />, level: 85 },
@@ -37,7 +37,7 @@ const SKILL_CATEGORIES = [
   {
     title: "AI, ML & Analytics",
     icon: <FiSliders />,
-    color: "from-accent/20 to-accent/5 border-accent/20 text-accent",
+    color: "from-accent/10 to-accent/[0.02] border-accent/15 text-accent",
     accentColor: "#22D3EE",
     skills: [
       { name: "Pandas", icon: <SiPandas />, level: 85 },
@@ -49,7 +49,7 @@ const SKILL_CATEGORIES = [
   {
     title: "Frontend & Dev Tools",
     icon: <FiLayout />,
-    color: "from-success/20 to-success/5 border-success/20 text-success",
+    color: "from-success/10 to-success/[0.02] border-success/15 text-success",
     accentColor: "#10B981",
     skills: [
       { name: "React", icon: <SiReact />, level: 80 },
@@ -97,10 +97,10 @@ export default function Skills() {
           <motion.div 
             key={idx}
             variants={itemVariants}
-            className="p-6 rounded-3xl glass bg-black/20 border border-card-border flex flex-col gap-6 relative group/cat"
+            className="p-6 rounded-3xl glass bg-white/60 border border-card-border flex flex-col gap-6 relative group/cat shadow-sm"
           >
             {/* Ambient category top glow */}
-            <div className="absolute top-0 inset-x-12 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover/cat:via-white/30 transition-all duration-500" />
+            <div className="absolute top-0 inset-x-12 h-[1px] bg-gradient-to-r from-transparent via-black/5 to-transparent group-hover/cat:via-black/15 transition-all duration-500" />
             
             {/* Category Header */}
             <div className="flex items-center gap-3">
@@ -117,7 +117,7 @@ export default function Skills() {
               {cat.skills.map((skill, sIdx) => (
                 <div 
                   key={sIdx}
-                  className="p-4 rounded-2xl border border-white/[0.04] bg-white/[0.02] flex items-center justify-between relative overflow-hidden group hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300"
+                  className="p-4 rounded-2xl border border-slate-200 bg-white/40 flex items-center justify-between relative overflow-hidden group hover:border-slate-300 hover:bg-white/80 transition-all duration-300 shadow-sm"
                 >
                   {/* Skill Inner Hover Glow */}
                   <div 

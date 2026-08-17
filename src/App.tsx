@@ -88,7 +88,7 @@ export default function App() {
       </main>
 
       {/* Minimal premium Footer */}
-      <footer className="relative z-30 border-t border-card-border bg-[#030712] py-12 px-6">
+      <footer className="relative z-30 border-t border-card-border bg-[#f8fafc] py-12 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-text-secondary select-none">
           <div className="flex flex-col items-center md:items-start gap-1 font-mono">
             <span className="text-text-primary font-bold">Mokshith H C</span>

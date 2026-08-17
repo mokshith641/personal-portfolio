@@ -10,7 +10,7 @@ export default function NotFound() {
   };
 
   return (
-    <main className="min-h-screen bg-[#030712] flex flex-col items-center justify-center p-6 text-center select-none font-sans relative overflow-hidden">
+    <main className="min-h-screen bg-[#f8fafc] flex flex-col items-center justify-center p-6 text-center select-none font-sans relative overflow-hidden">
       
       {/* Mesh glows */}
       <div className="absolute w-[250px] h-[250px] bg-red-500/10 rounded-full blur-[100px] top-[-50px] left-[-50px]" />
@@ -22,21 +22,21 @@ export default function NotFound() {
         <motion.div
           animate={{ y: [0, -5, 0] }}
           transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-          className="relative w-32 h-32 flex items-center justify-center border border-card-border rounded-full bg-black/60 backdrop-blur-md shadow-2xl p-4"
+          className="relative w-32 h-32 flex items-center justify-center border border-card-border rounded-full bg-white backdrop-blur-md shadow-lg p-4"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-transparent rounded-full opacity-60 blur-md" />
           
           <FaChessKing className="text-5xl text-red-500 filter drop-shadow-[0_0_15px_rgba(239,68,68,0.7)] animate-pulse" />
           
           {/* Warning badge */}
-          <div className="absolute bottom-1 right-1 w-7 h-7 rounded-full bg-red-500 border border-white/20 flex items-center justify-center text-xs text-white">
+          <div className="absolute bottom-1 right-1 w-7 h-7 rounded-full bg-red-500 border border-slate-100 flex items-center justify-center text-xs text-white">
             !
           </div>
         </motion.div>
 
         {/* Text */}
         <div className="flex flex-col gap-2">
-          <h1 className="text-5xl font-mono font-extrabold tracking-tight text-white">
+          <h1 className="text-5xl font-mono font-extrabold tracking-tight text-text-primary">
             404
           </h1>
           <h2 className="text-lg font-bold text-text-primary uppercase tracking-wider font-mono">

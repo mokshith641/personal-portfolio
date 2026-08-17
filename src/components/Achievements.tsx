@@ -29,7 +29,7 @@ const HIGHLIGHTS: AchievementHighlight[] = [
     metric: "70+",
     description: "Successfully designed and optimized code for 70+ algorithmic problems across arrays, dynamic programming, and data structures, building strong foundation in logic.",
     icon: <FiCode />,
-    color: "from-blue-500/20 via-blue-500/5 to-transparent border-blue-500/20 text-blue-400",
+    color: "from-blue-500/10 via-blue-500/[0.01] to-transparent border-blue-500/15 text-blue-600",
     badge: "Problem Solving"
   },
   {
@@ -39,7 +39,7 @@ const HIGHLIGHTS: AchievementHighlight[] = [
     metric: "90%",
     description: "Achieved the prestigious Elite distinction score, ranking in the top percentiles in competitive programming, scripting, and computing foundations in Python.",
     icon: <FiAward />,
-    color: "from-purple-500/20 via-purple-500/5 to-transparent border-purple-500/20 text-purple-400",
+    color: "from-purple-500/10 via-purple-500/[0.01] to-transparent border-purple-500/15 text-purple-600",
     badge: "Elite Gold"
   },
   {
@@ -49,7 +49,7 @@ const HIGHLIGHTS: AchievementHighlight[] = [
     metric: "GenAI",
     description: "Gained core proficiency in applied generative artificial intelligence concepts, focusing on LLM prompts, transformers, and model integrations on cloud infrastructures.",
     icon: <FiZap />,
-    color: "from-cyan-500/20 via-cyan-500/5 to-transparent border-cyan-500/20 text-cyan-400",
+    color: "from-cyan-500/10 via-cyan-500/[0.01] to-transparent border-cyan-500/15 text-cyan-600",
     badge: "Google Cloud"
   }
 ];
@@ -210,21 +210,21 @@ export default function Achievements() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: idx * 0.05 }}
             onClick={(e) => triggerCelebration(e, item.id)}
-            className={`cursor-pointer group relative flex flex-col justify-between p-6 rounded-3xl glass bg-black/20 border border-card-border overflow-hidden transition-all duration-300 hover:border-white/15 hover:bg-gradient-to-b ${item.color.split(" ")[0]} ${item.color.split(" ")[1]} ${item.color.split(" ")[2]}`}
+            className={`cursor-pointer group relative flex flex-col justify-between p-6 rounded-3xl glass bg-white/60 border border-card-border overflow-hidden transition-all duration-300 hover:border-black/10 hover:bg-gradient-to-b ${item.color.split(" ")[0]} ${item.color.split(" ")[1]} ${item.color.split(" ")[2]} shadow-sm`}
           >
             {/* Header containing Icon & Badge */}
             <div className="flex items-center justify-between mb-6 relative z-10">
-              <div className={`w-9 h-9 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-lg ${item.color.split(" ")[4]}`}>
+              <div className={`w-9 h-9 rounded-xl bg-slate-100 border border-slate-200/60 flex items-center justify-center text-lg ${item.color.split(" ")[4]}`}>
                 {item.icon}
               </div>
-              <span className="text-[9px] font-mono font-bold tracking-wider uppercase bg-white/[0.04] px-2.5 py-1 rounded border border-white/[0.06] text-text-secondary">
+              <span className="text-[9px] font-mono font-bold tracking-wider uppercase bg-slate-100 px-2.5 py-1 rounded border border-slate-200/60 text-text-secondary">
                 {item.badge}
               </span>
             </div>
 
             {/* Metric Display */}
             <div className="mb-4 relative z-10">
-              <h4 className="text-4xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-text-primary via-white to-text-secondary mb-1">
+              <h4 className="text-4xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-text-primary to-text-secondary mb-1">
                 {item.metric}
               </h4>
               <h5 className="text-sm font-bold text-text-primary group-hover:text-white transition-colors">
@@ -250,7 +250,7 @@ export default function Achievements() {
       </div>
 
       {/* Certifications Subtitle */}
-      <div className="flex flex-col items-start text-left mb-8 border-t border-white/[0.05] pt-12">
+      <div className="flex flex-col items-start text-left mb-8 border-t border-slate-200 pt-12">
         <h4 className="text-xl font-bold text-text-primary mb-1">Certifications Catalog</h4>
         <p className="text-text-secondary text-xs">Verify academic coursework, Cloud engineering tracks, and subject specialization files.</p>
       </div>
@@ -265,8 +265,8 @@ export default function Achievements() {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 rounded-full text-xs font-mono transition-all duration-200 cursor-pointer ${
                 selectedCategory === cat
-                  ? "bg-accent text-[#030712] font-bold"
-                  : "bg-white/[0.02] border border-white/[0.08] text-text-secondary hover:text-text-primary hover:bg-white/[0.05]"
+                  ? "bg-accent text-white font-bold"
+                  : "bg-white border border-slate-200 text-text-secondary hover:text-text-primary hover:bg-slate-50 shadow-sm"
               }`}
             >
               {cat}
@@ -281,7 +281,7 @@ export default function Achievements() {
             placeholder="Search certificates..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-4 py-2.5 rounded-full border border-white/[0.08] bg-black/40 text-xs text-text-primary placeholder-text-secondary/40 focus:outline-none focus:border-accent transition-all font-mono"
+            className="w-full px-4 py-2.5 rounded-full border border-slate-200 bg-white text-xs text-text-primary placeholder-text-secondary/50 focus:outline-none focus:border-accent transition-all font-mono shadow-sm"
           />
         </div>
       </div>
@@ -294,17 +294,17 @@ export default function Achievements() {
             href={`/certificates/${cert.file}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-5 rounded-2xl border border-white/[0.04] bg-white/[0.01] hover:border-white/10 hover:bg-white/[0.03] transition-all flex flex-col justify-between gap-4 group cursor-pointer text-left relative overflow-hidden"
+            className="p-5 rounded-2xl border border-slate-200 bg-white/40 hover:border-slate-300 hover:bg-white/80 transition-all flex flex-col justify-between gap-4 group cursor-pointer text-left relative overflow-hidden shadow-sm"
           >
             <div className="flex flex-col gap-2 relative z-10">
-              <span className="text-[9px] font-mono font-bold tracking-wider uppercase bg-white/[0.04] px-2 py-0.5 rounded border border-white/[0.06] text-text-secondary w-fit">
+              <span className="text-[9px] font-mono font-bold tracking-wider uppercase bg-slate-100 px-2 py-0.5 rounded border border-slate-200/60 text-text-secondary w-fit">
                 {cert.issuer}
               </span>
               <h4 className="text-text-primary text-xs font-bold leading-normal truncate group-hover:text-accent transition-colors">
                 {cert.title}
               </h4>
             </div>
-            <div className="flex justify-between items-center text-[9px] font-mono text-text-secondary/70 pt-2 border-t border-white/[0.03] relative z-10">
+            <div className="flex justify-between items-center text-[9px] font-mono text-text-secondary/70 pt-2 border-t border-slate-100 relative z-10">
               <span>{cert.category}</span>
               <span className="text-accent underline opacity-0 group-hover:opacity-100 transition-opacity">View PDF</span>
             </div>
